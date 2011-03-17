@@ -1,0 +1,15 @@
+README
+
+thenoticeprooject
+
+Digital Noticeboards
+
+Provide web based content management for Digital Noticeboards for display in Churches and otheer public spaces.
+
+Templates
+Stylesheets
+
+Organisation
+    - Noticeboards (template, stylesheet)
+        - panes
+            - panecontents

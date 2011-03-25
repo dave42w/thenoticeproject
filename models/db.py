@@ -118,3 +118,32 @@ crud.settings.auth = None                      # =auth to enforce authorization 
 mail.settings.server = settings.email_server
 mail.settings.sender = settings.email_sender
 mail.settings.login = settings.email_login
+
+
+"""
+just copy paste this code into your model and replace dbOBJECT to something
+you prefer or what is used in your code, another thing that should be known is that
+this code still cannot distinguish what exactly should be in reference title - name
+when you use generic appadmin so please remove all fiealds you don't need not require 
+"""
+
+"""
+Table definition
+"""
+db.define_table("Clients",
+      SQLField("Name", "string", notnull=True, default=None),)
+
+
+"""
+Table definition
+"""
+db.define_table("Noticeboards",
+      SQLField("id_Clients", db.Clients),
+      SQLField("Name", "string", notnull=True, default=None),
+      SQLField("Location", "string", notnull=True, default=None))
+
+
+"""
+Relations between tables (remove fields you don't need from requires)
+"""
+db.Noticeboards.id_Clients.requires=IS_IN_DB(db, 'Clients.id')

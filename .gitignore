@@ -1,6 +1,7 @@
 cache
 databases/sql.log
-databases/storage.sqlite
+databases
+databases
 errors
 sessions
 *.bak
